@@ -5,29 +5,33 @@
 # n = 5
 # m = 60
 
-weight = [2,3,5,7,1,4,1]
-profit = [10,5,15,7,6,18,3]
-n = 7
-m = 15
+w = list(map(int, input().split()))
+p = list(map(int, input().split()))
+n = int(input())
+c = int(input())
+
 allArray = []
+solutionVector = [0]*n
 
-for i in range(n):
-    allArray.append([weight[i], profit[i], profit[i]/weight[i]])
-
-allArray.sort(key=lambda x: x[2], reverse=True)
+allArray = list(enumerate([x/y for x, y in zip(p, w)]))
+allArray.sort(key=lambda x:x[1], reverse=True)
 
 # print(allArray)
 
 totalWeight = 0
 totalProfit = 0
-for w,p,ratio in allArray:
-    totalWeight += w
-    if totalWeight <= m:
-        totalProfit += p
+for index, r  in allArray:
+    totalWeight += w[index]
+    if totalWeight <= c:
+        totalProfit += p[index]
+        solutionVector[index] = 1
     else:
-        totalWeight -= w
-        fraction = (m-totalWeight)
-        totalProfit += p*(m-totalWeight)/w
-        totalWeight += fraction
+        totalWeight -= w[index]
+        fraction = (c-totalWeight)/w[index]
+        totalProfit += p[index]*fraction
+        totalWeight += fraction*c
+        solutionVector[index] = f'fraction:.2f'
         break
-print(totalProfit)
+
+print("Total Profit is : ", totalProfit)
+print("Solution Vector is : ", *solutionVector)
