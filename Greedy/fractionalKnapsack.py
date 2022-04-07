@@ -5,10 +5,10 @@
 # n = 5
 # m = 60
 
-w = list(map(int, input().split()))
-p = list(map(int, input().split()))
-n = int(input())
-c = int(input())
+n = int(input("Enter no.of Weights you have : "))
+w = list(map(int, input("Enter Weights : ").split()))
+p = list(map(int, input("Enter Values : ").split()))
+c = int(input("Enter Capacity : "))
 
 allArray = []
 solutionVector = [0]*n
