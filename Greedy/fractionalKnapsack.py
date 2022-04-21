@@ -16,8 +16,6 @@ solutionVector = [0]*n
 allArray = list(enumerate([x/y for x, y in zip(p, w)]))
 allArray.sort(key=lambda x:x[1], reverse=True)
 
-# print(allArray)
-
 totalWeight = 0
 totalProfit = 0
 for index, r  in allArray:
@@ -30,7 +28,7 @@ for index, r  in allArray:
         fraction = (c-totalWeight)/w[index]
         totalProfit += p[index]*fraction
         totalWeight += fraction*c
-        solutionVector[index] = f'fraction:.2f'
+        solutionVector[index] = f'{fraction:.2f}'
         break
 
 print("Total Profit is : ", totalProfit)
