@@ -5,10 +5,15 @@
 # p = [2, 3, 1, 4]
 # maxWeight = 8
 
-n = 4
-p = [1,2,5,6]
-w = [2,3,4,5]
-maxWeight = 8
+# n = 4
+# p = [1,2,5,6]
+# w = [2,3,4,5]
+# maxWeight = 8
+
+n = 3
+p = [60, 100, 120]
+w = [10, 20, 30]
+maxWeight = 50
 
 
 indices, w, p = zip(*sorted(zip(range(n), w, p), key=lambda x:x[1]))
