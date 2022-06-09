@@ -4,10 +4,11 @@ public class MinCostClimbingStairs {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         String[] strArr = s.nextLine().split(" ");
-        Integer[] arr1 = new Integer[strArr.length];
+        int[] arr = new int[strArr.length];
         int count = 0;
-        for(String str: strArr)
-            arr1[count++] = Integer.parseInt(str);
+        for(String eachVal: strArr)
+            arr[count++] = Integer.parseInt(eachVal);
+        System.out.println(Arrays.toString(arr) + arr.getClass());
         s.close();
     }
 }
